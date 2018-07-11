@@ -9,7 +9,7 @@ import { Post } from '../post.model';
 export class PostCreateComponent {
   enteredTitle = '';
   enteredContent = '';
-  @Output() postCreated = new EventEmitter();
+  @Output() postCreated = new EventEmitter<Post>();
 
   paraCrearPosts() {
     const post: Post = {title: this.enteredTitle, content: this.enteredContent};
