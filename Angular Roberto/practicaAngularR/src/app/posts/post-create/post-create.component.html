@@ -1,10 +1,26 @@
 <mat-card>
+  <form (submit)="paraCrearPosts(postForm)" #postForm="ngForm">
   <mat-form-field>
-    <input matInput type="text" [(ngModel)]="enteredTitle">
+    <input
+    matInput
+    type="text"
+    name="title"
+    ngModel
+    required
+    #title="ngModel">
+    <mat-error *ngIf="title.invalid">De nuez</mat-error>
   </mat-form-field>
 <mat-form-field>
-    <textarea  matInput rows="1" [(ngModel)]="enteredContent"></textarea>
+    <textarea
+    matInput
+    rows="1"
+    name="content"
+    ngModel
+    required
+    #content="ngModel"></textarea>
+    <mat-error *ngIf="content.invalid">De nuez</mat-error>
 </mat-form-field>
-<button mat-raised-button color="primary" (click)="paraCrearPosts()">Publicar</button>
+<button mat-raised-button color="primary" type="submit">Publicar</button>
+</form>
 </mat-card>
 
